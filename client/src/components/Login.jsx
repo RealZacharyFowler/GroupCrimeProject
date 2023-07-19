@@ -33,7 +33,7 @@ const Login = (props) => {
                 <input value={userLogin.email} onChange={changeHandler}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
                 <label htmlFor="password">password</label>
                 <input value={userLogin.password} onChange={changeHandler} type="password" placeholder="********" id="password" name="password" />
-                <button type="submit">Log In</button> 
+                <Link to = {"/allcrimes"}><button type="submit">Log In</button></Link> 
             </form>
             < Link to={'/'} ><button className="link-btn">Don't have an account? Register here.</button></Link>
             {/* <button className="link-btn" Link to={'/'} >Don't have an account? Register here.</button> */}
