@@ -7,7 +7,7 @@ import  Dashboard  from "./components/Dashboard";
 import DisplayAll from "./components/DisplayAll";
 import CrimeForm from "./components/CrimeForm";
 import EditCrimeForm from './components/EditCrimeForm';
-
+import SelectCrime from './components/SelectCrime';
 function App() {
 
   const [user, setUser] = useState({})
@@ -22,6 +22,7 @@ function App() {
           <Route path='/dashboard' element={<Dashboard/>}/>
           <Route path="/newcrime" element={<CrimeForm />} />
           <Route path="/edit/:id" element={<EditCrimeForm />} />
+          <Route path = "/view/:id" element = {<SelectCrime/>}/>
         </Routes>
       </BrowserRouter>
     </div>
