@@ -41,7 +41,7 @@ const Register = (props) => {
             <input value={user.password} onChange={changeHandler} type="password" placeholder="********" id="password" name="password" />
             <label htmlFor="confirmPassword"> Confirm Password</label>
             <input value={user.confirmPassword} onChange={changeHandler} type="password" placeholder="********" id="confirmPassword" name="confirmPassword" />
-            <button type="submit">Log In</button>
+            <Link to = {"/allcrimes"}><button type="submit">Register</button></Link>
         </form>
         < Link to={'/login'} ><button className="link-btn">Already have an account?</button></Link>
         {/* <button className="link-btn" Link to={'/login'}>Already have an account? Login here.</button> */}

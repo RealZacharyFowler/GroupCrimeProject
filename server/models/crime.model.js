@@ -16,10 +16,14 @@ const CrimeSchema = new mongoose.Schema({
         required: [true, "City is required"],
         minLength: [3, "City must be at least 3 characters"],
     },
-    creator: {
+     creator: {
+        //type: Schema.Types.ObjectId,
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }
+
+         
+
 }, {timestamps:true});
 
 

@@ -34,21 +34,26 @@ return (
             {errors?.type && <span>{errors.type.message}</span> }
             
             <label htmlFor="crimeStatus">Status</label>
+
             {/* <input type="text" onChange={(e) => setCrimeStatus(e.target.value)} value={crimeStatus} /> */}
             <select class="select" onChange={(e) => setCrimeStatus(e.target.value)}  value={crimeStatus} >
+
+            <select class="select" onChange={(e) => setCrimeStatus(e.target.value)} >
+
                 <option value="In Progress">In Progress</option>
                 <option value="Investigating">Investigating</option>
                 <option value="Resolved">Resolved</option> 
             </select>
             {errors?.status && <span>{errors.status.message}</span> }
-            
+
             <label htmlFor="crimeTitle">City</label>
             <input type="text"onChange={(e) => setCrimeCity(e.target.value)} value={crimeCity}/>
             {errors?.city && <span>{errors.city.message}</span> }
             
             <button className="link-btn" type="submit">SUBMIT </button>
-        <Link to="/allcrimes"><button className="link-btn">Home</button></Link>
+        
         </form>
+        <Link to="/allcrimes"><button className="link-btn">Home</button></Link>
         </div>
     );
 };

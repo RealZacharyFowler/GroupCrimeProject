@@ -86,6 +86,9 @@ return (
                     >
                         Delete
                     </button>
+                    <Link to={`/view/${crime._id}`}>
+                        <button className="btn btn-primary">View</button>
+                    </Link>
                     </td>
                     <td>{crime.creator.fullName}</td>
                     
