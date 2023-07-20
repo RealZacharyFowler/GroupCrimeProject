@@ -8,6 +8,7 @@ const CrimeSchema = new mongoose.Schema({
     },
     status: {
         type: String,
+        enum: ['In Progress', 'Investigating', 'Resolved'],
         required: [true, "Please select status of crime"],
     },
     city: {
