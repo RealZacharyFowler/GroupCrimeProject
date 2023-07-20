@@ -10,14 +10,14 @@ useEffect(() => {
     axios
     .get("http://localhost:8000/api/crime")
     .then((response) => {
-        console.log(response.data);
+        console.log("display data",response.data);
         setAllCrimes(response.data);
     })
-    // .getLogged("http://localhost:8000/api/user-current")
-    // .then((response) => {
-    //     console.log(response.data);
-    //     setUser(response.data);
-    // })
+    axios.get("http://localhost:8000/api/user-current", {withCredentials:true})
+    .then((response) => {
+        console.log(response.data);
+        setUser(response.data);
+    })
     .catch((err) => {
         console.log(err.response);
     });
@@ -38,6 +38,20 @@ const handleDeleteCrime = (idFromBelow) => {
         console.log("error deleting crime", err.response);
     });
 };
+
+const handleLogout = (e) => {
+    e.preventDefault();
+    console.log("attempting to logout");
+    axios
+        .post('http://localhost:8000/api/logout', { } , { withCredentials: true })
+        .then(res => {
+            setUser(null);
+            console.log("successful logout")
+            window.location.href = '/'
+        })
+        .catch(err => console.log("logout error: " + err));
+};
+
 return (
     <div className="container">
     <div className="row">
@@ -76,14 +90,15 @@ return (
                         <button className="btn btn-primary">View</button>
                     </Link>
                     </td>
-                    <td>{user._id}</td>
-                    {/*<td>{login.firstName}</td>*/}
+                    <td>{crime.creator.fullName}</td>
+                    
                 </tr>
                 );
             })}
             </tbody>
         </table>
             <Link to="/newcrime"><button className="btn btn-primary">Report a Crime</button></Link>
+            <button className="btn btn-danger"><a href="" onClick={handleLogout}>Logout </a> </button>
         </div>
     </div>
     </div>

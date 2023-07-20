@@ -6,5 +6,5 @@ app.get("/api/crime", crimeController.getAllCrime);
 app.get("/api/crime/:id", crimeController.getOneCrime);
 app.put("/api/crime/:id", crimeController.updateCrime);
 app.delete("/api/crime/:id", crimeController.deleteExistingCrime);
-app.get('/api/objs/user', crimeController.getByUser)
+app.get('/api/crime/user', crimeController.getByUser)
 };

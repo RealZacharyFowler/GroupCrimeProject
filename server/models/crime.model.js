@@ -19,9 +19,12 @@ const CrimeSchema = new mongoose.Schema({
      creator: {
         //type: Schema.Types.ObjectId,
         type: mongoose.Schema.Types.ObjectId,
-         ref: 'User',
-     }
+        ref: 'User'
+    }
+
+         
+
 }, {timestamps:true});
 
 
-module.exports = mongoose.model("crime", CrimeSchema);
+module.exports = mongoose.model("Crime", CrimeSchema);
