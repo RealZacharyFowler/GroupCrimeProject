@@ -14,9 +14,9 @@ const handleSubmit = (e) => {
         type: crimeType, 
         status: crimeStatus,
         city: crimeCity
-})
+}, {withCredentials:true})
 .then((response) => {
-        console.log(response);
+        console.log("form data",response);
         navigate("/allcrimes");
 })
 .catch((err) => {
@@ -31,10 +31,11 @@ return (
             
             <label htmlFor="crimeTitle">Crime Type</label>
             <input type="text" onChange={(e) => setCrimeType(e.target.value)} value={crimeType}/>
-            {errors?.title && <span>{errors.title.message}</span> }
+            {errors?.type && <span>{errors.type.message}</span> }
             
             <label htmlFor="crimeStatus">Status</label>
             <input type="text" onChange={(e) => setCrimeStatus(e.target.value)} value={crimeStatus} />
+            {errors?.status && <span>{errors.status.message}</span> }
             
             <label htmlFor="crimeTitle">City</label>
             <input type="text"onChange={(e) => setCrimeCity(e.target.value)} value={crimeCity}/>

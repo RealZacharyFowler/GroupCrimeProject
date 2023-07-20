@@ -43,6 +43,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
   color: blue;
+  margin: 2px;
 }
 
 .link-btn {
@@ -50,3 +51,5 @@ button {
   color: white;
   text-decoration: underline;
 }
+
+

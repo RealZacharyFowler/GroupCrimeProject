@@ -58,11 +58,12 @@ module.exports = {
     logout: (req, res) => {
         res.clearCookie('userToken').json({message:'You logged out'})
     },
-    getLogged: async (req, res) => {
+    getLogged: async (req, res) => { console.log("trying to get a user")
         try {
-            const user = jwt.verify(req.cookies.userToken, SECRET_KEY);
-            const currentUser = await Model.findOne({ _id: user._id });
-            res.json(currentUser);
+            const user = jwt.verify(req.cookies.userToken, secret); 
+            console.log("this is user", user)
+            // const currentUser = await Model.findOne({ _id: user._id });
+            res.json(user);
         } catch (error) {
             res.status(400).json({ errors: 'failed to get logged in user' })
         }
