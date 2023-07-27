@@ -8,7 +8,11 @@ const CrimeSchema = new mongoose.Schema({
     },
     status: {
         type: String,
+
         enum: ['InProgress', 'Investigating', 'Resolved'],
+
+        enum: ['In Progress', 'Investigating', 'Resolved'],
+
         required: [true, "Please select status of crime"],
     },
     city: {
@@ -16,8 +20,10 @@ const CrimeSchema = new mongoose.Schema({
         required: [true, "City is required"],
         minLength: [3, "City must be at least 3 characters"],
     },
-    creator: {
+     creator: {
+        //type: Schema.Types.ObjectId,
         type: mongoose.Schema.Types.ObjectId,
+
         ref: 'User'
     }
 }, {timestamps:true});
